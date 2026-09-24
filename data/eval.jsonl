@@ -1,0 +1,5 @@
+{"question": "How many days do I have to register my new address?", "expected_source": "sample_faq.md", "must_contain": "14"}
+{"question": "What is an Arztbrief?", "expected_source": "sample_faq.md", "must_contain": "diagnosis"}
+{"question": "After how many days of sickness do I usually need a sick note?", "expected_source": "sample_faq.md", "must_contain": "3"}
+{"question": "Is health insurance mandatory in Germany?", "expected_source": "sample_faq.md", "must_contain": "mandatory"}
+{"question": "Where do I renew my residence permit?", "expected_source": "sample_faq.md", "must_contain": "Ausländerbehörde"}

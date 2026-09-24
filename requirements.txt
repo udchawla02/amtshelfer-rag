@@ -1,0 +1,31 @@
+# Default dependency set: runs anywhere, including Streamlit Community Cloud
+# (~1 GB RAM). Streamlit Cloud only auto-detects a file named requirements.txt,
+# so the light set has to live under this name.
+#
+# For the full local stack (Ollama, the cross-encoder reranker, unstructured):
+#     pip install -r requirements-local.txt
+#
+# Use with BACKEND=gemini: chat AND embeddings come from Google AI Studio's free
+# tier, so nothing heavy needs to run locally. Set USE_RERANKER=false alongside it.
+#
+# Deliberately excluded vs requirements.txt:
+#   sentence-transformers  ~2 GB of torch, only needed for the local cross-encoder
+#   langchain-ollama       Ollama cannot run on Streamlit Cloud
+#   langchain-huggingface  local HF embeddings, not used with the gemini backend
+#   unstructured           heavy Markdown parser; TextLoader is used instead
+# Every one of those is imported lazily in src/, so leaving them out is safe.
+
+langchain>=0.3,<0.4
+langchain-core>=0.3,<0.4
+langchain-community>=0.3,<0.4
+langchain-text-splitters>=0.3,<0.4
+
+langchain-google-genai>=2.0
+
+faiss-cpu>=1.8
+pypdf>=4.2
+rank-bm25>=0.2.2
+
+streamlit>=1.37
+pydantic-settings>=2.3
+python-dotenv>=1.0
